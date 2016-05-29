@@ -14,7 +14,25 @@ commentIssueId: 31
 
 - the question structure on the exam
 - how to start Java program from command line and what is required for which step (JDK or JRE)
-- what is stored on the heap and what is stored on the stack
+- what is stored on the _heap_ and what is stored on the _stack_
+
+### Operators and primitive types
+
+- what are the bit sizes of each primitive type
+- how is a binary, octal or hexadecimal number represented
+- what is upcasting
+- operator types and operator precedence, have practiced that!
+- what is numeric promotion, overflow and underflow
+- which types are not allowed as type of `x` in `switch(x)`
+
+### Date and Time
+
+- what are the new classes for that
+- how to create a date/time from `String`
+- how to create custom date/time
+- how to manipulate date/time
+- what is `Period` and `Duration`
+- how to format date/time; what are the predefined formats
 
 ### Java classes
 
@@ -36,17 +54,22 @@ commentIssueId: 31
 - what modifiers are assumed in an interface
 - what is `virtual` method
 
-### Exceptions
+### Java 8 stuff
 
-- errors, checked exceptions and runtime exceptions - who throws what and who catches what
-- in implementing/overriding method, can we rather declare more or less exceptions than the superclass has
-- give examples of `RuntimeException` (6), checked exception (2) and `Error` (3)
+- lambda expressions - when can you omit braces, semicolons, variables, etc
+- can a lambda expression access the containing class' instance variables
+- what is a default method
+- `default` methods - what happens on any inheritance collisions
+- can `default` method be redeclared `abstract` method
+- what is a _functional interface_
+- example of using `Predicate`
 
-### Loops
+### String and StringBuilder
 
-- the `do-while` loop and why to use it at all
-- what are a segments of a loop and which one can contain multiple expressions
-- where can you use the `continue` keyword
+- the trick with comparing Strings and string pool
+- methods on `String`
+- methods on `StringBuilder`
+- does `str.replace(oldChar, newChar)` replace all or just the first occurence?
 
 ### Arrays
 
@@ -61,45 +84,22 @@ commentIssueId: 31
 - available methods on `ArrayList`
 - how to sort an `ArrayList`
 
-### Date and Time
+### Loops
 
-- what are the new classes for that
-- how to create a date/time from `String`
-- how to create custom date/time
-- how to manipulate date/time
-- what is `Period` and `Duration`
-- how to format date/time; what are the predefined formats
+- the `do-while` loop and why to use it at all
+- what are a segments of a loop and which one can contain multiple expressions
+- where can you use the `continue` keyword
 
-### Strictly Java 8 stuff
+### Exceptions
 
-- lambda expressions - when can you omit braces, semicolons, variables, etc
-- can a lambda expression access the containing class' instance variables
-- what is a default method
-- `default` methods - what happens on any inheritance collisions
-- can `default` method be redeclared `abstract` method
-- what is a _functional interface_
-- example of using `Predicate`
+- errors, checked exceptions and runtime exceptions - who throws what and who catches what
+- in implementing/overriding method, can we rather declare more or less exceptions than the superclass has
+- give examples of `RuntimeException` (6), checked exception (2) and `Error` (3)
 
-### Operators and primitive types
+### .. and also, know that
 
-- what are the bit sizes of each primitive type
-- how is a binary, octal or hexadecimal number represented
-- what is upcasting
-- operator types and operator precedence, have practiced that!
-- what is numeric promotion, overflow and underflow
-- which types are not allowed as type of `x` in `switch(x)`
-
-### String and StringBuilder
-
-- the trick with comparing Strings and string pool
-- methods on `String`
-- methods on `StringBuilder`
-- does `str.replace(oldChar, newChar)` replace all or just the first occurence?
-
-### Know that...
-
-- know that autoboxing does not work with predicates
-- know that there is Java process managed by JVM, and this process executes static void main
+- know that _autoboxing_ does not work with `Predicate`s
+- know that there is Java process managed by JVM, and this process executes the `static void main`
 - know that `java.lang.*` is automatically imported
 - know that this is correct: `double i = 1_000_000.0`, but this not: `double i = 1_000_000_.0` or double `i = _1_000_000.0` (also not)
 - know that `System.gc()` is just a suggestion
