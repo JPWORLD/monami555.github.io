@@ -30,7 +30,7 @@ Very important: please comment if you find an error.
 </div>
 
 - how to start Java program from command line and what is required for which step (JDK or JRE)
-<button data-toggle="collapse" data-target="#q1_2" onclick="alarm('s');">[see]</button>
+<a data-toggle="collapse" data-target="#q1_2" href="#q1_2">[see]</a>
 <div id="q1_2" class="collapse collapsible bg-info" markdown="1">
 - to start a Java program:
   - `$ javac com/bla/Zoo.java` - requires JDK
