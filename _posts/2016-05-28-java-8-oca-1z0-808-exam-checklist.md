@@ -34,9 +34,9 @@ Very important: please comment if you find an error.
 <div id="q1_2" class="collapse collapsible bg-info" markdown="1">
 - to start a Java program:
   - `$ javac com/bla/Zoo.java` - requires JDK
-  - `$ java com.bla.Zoo**` - requires only JRE
-- if `main` is missing the **process** will throw exception
-- if `main` is wrong signature the **Java** will throw exception
+  - `$ java com.bla.Zoo` - requires only JRE
+- if `main` is missing, the **process** will throw an exception
+- if `main` is of wrong signature, **Java** will throw an exception
 </div>
 
 - what is stored on the _heap_ and what is stored on the _stack_
@@ -64,7 +64,7 @@ Very important: please comment if you find an error.
 - `binary`: starts with `0b` or `0B`, e.g. `0b10`
 </div>
 
-- what is **upcasting**
+- what is _upcasting_
 <button data-toggle="collapse" data-target="#q2_3" class="btn-link">[see]</button>
 <div id="q2_3" class="collapse collapsible bg-info" markdown="1">
 - upcasting happens e.g. here `double d = 98;` - where a number of lower precision is automatically casted to the one of higher precision
@@ -90,13 +90,24 @@ Very important: please comment if you find an error.
 - what is _numeric promotion_, _overflow_ and _underflow_
 <button data-toggle="collapse" data-target="#q2_5" class="btn-link">[see]</button>
 <div id="q2_5" class="collapse collapsible bg-info" markdown="1">
-
+- [_Numeric promotion (§5.6) brings the operands of a numeric operator to a common type so that an operation can be performed._](https://docs.oracle.com/javase/specs/jls/se7/html/jls-5.html); it occurs for example here `5==5.0` - even though the numbers are of different type, `5` is first converted to `5.0` and then the comparison is made; promotion occurs before an operand is applied or before method invocation
+- underflow and overflow
+    - happens when using **floating point operators**
+    - in case of integer based data types, decreasing below MIN value or increasing aboe MAX, causes skipping to either the MAX value, or the MIN value, respectivelly
+    - in case of non-integer data types, decreasing below MIN results in `0` value, and increasing above MAX value, results in `Infinity`
 </div>
 
-- which types are not allowed as type of `x` in `switch(x)`
+- which types are allowed as type of `x` in `switch(x)`
 <button data-toggle="collapse" data-target="#q2_6" class="btn-link">[see]</button>
 <div id="q2_6" class="collapse collapsible bg-info" markdown="1">
-
+- `int` and `Integer`
+- `byte` and `Byte`
+- `short` and `Short`
+- `char` and `Character`
+- `enum`
+- `String`
+- no ~~long~~, no ~~boolean~~
+- all must be `final`
 </div>
 
 ### Date and Time
