@@ -21,7 +21,7 @@ Very important: please comment if you find an error.
 ### Questions around Java
 
 - the question structure on the exam
-<p data-toggle="collapse" data-target="#q1_1">[see]</p>
+<span data-toggle="collapse" data-target="#q1_1">[see]</span>
 <div id="q1_1" class="collapse collapsible bg-info" markdown="1">
 - when they ask you about **compilation errors**, they ask you about **all of them**, not the first one
 - when they ask for the "output" they can mean **any part of the output**
