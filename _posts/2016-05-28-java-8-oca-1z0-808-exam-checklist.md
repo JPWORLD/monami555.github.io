@@ -112,22 +112,32 @@ Very important: please comment if you find an error.
 
 ### Date and Time
 
-- what are the new classes for that
+- what are the new classes for representing date and time
 <button data-toggle="collapse" data-target="#q3_1" class="btn-link">[see]</button>
 <div id="q3_1" class="collapse collapsible bg-info" markdown="1">
-
-</div>
-
-- how to create a date/time from `String`
-<button data-toggle="collapse" data-target="#q3_1" class="btn-link">[see]</button>
-<div id="q3_1" class="collapse collapsible bg-info" markdown="1">
-
+- `LocalDate`, `LocalTime`, `LocalDateTime`, in `java.time.*` package
+- `DateTimeException`
 </div>
 
 - how to create custom date/time
 <button data-toggle="collapse" data-target="#q3_1" class="btn-link">[see]</button>
 <div id="q3_1" class="collapse collapsible bg-info" markdown="1">
+- `LocalDate.now();`
+- `LocalDate.of(2015, Month.JANUARY, 1)`, same as `LocalDate.of(2015, 1, 1)`
+- `LocalTime.of(6, 15);`
+- `LocalTime.of(6, 15, 30);`
+- `LocalTime.of(6, 15, 30, 234);` - last one is nanoseconds
+- `LocalDateTime.of(2015, Month.JANUARY, 16, 15, 30);`
+- `LocalDateTime.of(date, time);`
+</div>
 
+- how to create a date/time from `String`
+<button data-toggle="collapse" data-target="#q3_1" class="btn-link">[see]</button>
+<div id="q3_1" class="collapse collapsible bg-info" markdown="1">
+- by using a `DateTimeFormatter`, e.g. `DateTimeFormatter.ISO_LOCAL_DATE`,  `DateTimeFormatter.ISO_LOCAL_DATE_TIME`
+- `LocalDate.parse(string, formatter);`
+- `LocalDate.parse(string);` - uses default
+-
 </div>
 
 - how to manipulate date/time

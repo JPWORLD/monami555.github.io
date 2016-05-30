@@ -174,7 +174,7 @@ where `Zoo` has `static void main` of course (**JDK required for javac, for java
 - int[] numbers = new int{14,12,53};
 - int [] numbers = new int[3];
 - int numbers[] = new int[3];
-- numbers is a **reference variable **\- it **points **to the array object
+- numbers is a **reference variable** - it **points **to the array object
 - int a[], b; //this is one int array and one int, and is correct!
 - [Ljava.lang.String;@160bc7c0 - **array **of** reference type **java.lang.String and 160bc7c0 **hash code**
 - Arrays of Strings **does not allocate space for strings**. Only allocates space for references to Strings.
@@ -205,76 +205,76 @@ where `Zoo` has `static void main` of course (**JDK required for javac, for java
 **Wrappers for Primitives**
 
 - **parseInt**() returns a **primitive**, while **valueOf**() returns a **wrapper class**
-- **autoboxing **\- since Java 5 primitives are **automatically **converted to wrappers, if needed (except predicates)
+- **autoboxing** - since Java 5 primitives are **automatically **converted to wrappers, if needed (except predicates)
 - listOfIntegers.**add**(null) - is legal! but unboxing it into int will cause NullPointerException (as it's not an int), meaning this: **int h = listOfIntegers.get(0); **btw adding **null **is no longer called autoboxing
 
 ![][7]
 
-- list.**remove**(2) - will rather treat 2 as index, not object - as int is closer to int than Integer
+- list.**remove**(2) - will rather treat 2 as index, not object - as int is closer to `int` than `Integer`
 
 **Dates and Times**
 
-- completely different in Java 8, **old way is not on the exam **(yuppi!!)
-- import java.time.*
-- time zones are **out of scope **(yaaay!!)
-- **LocalDate **\- date without time and timezone, use e.g. for birthday
-- LocalDate.now();
-- the output **depends on the locale **where you are, but** in exam US format is used**: 2015-01-20
-- LocalDate.**of**(2015, Month.JANUARY, 1), same as LocalDate.**of**(2015, 1, 1)
-- **LocalTime **\- time without timezone and without date
-- US output: 12:45:16:245
-- LocalDateTime.**of**(6, 15);
-- LocalDateTime.**of**(6, 15, 30);
-- LocalDateTime.**of**(6, 15, 30, 234); - last one is nanoseconds
-- **LocalDateTime **\- both date and time but without timezone
-- US output: 2015-01-20T12:45:16:245
-- Java uses T to separate date from time when converting it to a String
-- LocalDateTime.**of**(2015, Month.JANUARY, 16, 15, 30);
-- LocalDateTime.**of**(date, time);
-- Oracle recommends** avoiding time zones **unless you really need them (yaay!)
-- btw, ZonedDateTime is for timezones
-- new LocalDate(); - **does not compile**
-- **DateTimeException **if the numbers are invalid
-- in the past - Date class represented both date and time, always; moths started from 0; actually Calendar was newer way, but still it's old :P and long to use..
+- completely different in Java 8, **old way is not on the exam** (yuppi!!)
+- `import java.time.*`
+- time zones are **out of scope** (yaaay!!)
+- `LocalDate` - date without time and timezone, use e.g. for birthday
+- `LocalDate.now();`
+- the output **depends on the locale** where you are, but **in the exam the US format is used**: `2015-01-20`
+- `LocalDate.of(2015, Month.JANUARY, 1)`, same as `LocalDate.of(2015, 1, 1)`
+- `LocalTime` - time without timezone and without date
+- US output: `12:45:16:245`
+- `LocalTime.of(6, 15);`
+- `LocalTime.of(6, 15, 30);`
+- `LocalTime.of(6, 15, 30, 234);` - last one is nanoseconds
+- `LocalDateTime` - both date and time but without timezone
+- US output: `2015-01-20T12:45:16:245`
+- Java uses `T` to separate date from time when converting it to a String
+- `LocalDateTime.of(2015, Month.JANUARY, 16, 15, 30);`
+- `LocalDateTime.of(date, time);`
+- Oracle recommends **avoiding time zones** unless you really need them (yaay!)
+- btw, `ZonedDateTime` is for timezones
+- ~~`new LocalDate();`~~ - **does not compile**
+- `DateTimeException` if the numbers are invalid
+- in the past - `Date` class represented both date and time, always; moths started from `0`; actually `Calendar` was newer way, but still it's old :P and long to use..
 
 **Manipulating Date and Time**
 
-- local**Date**.**plusDays**(2); .**plusWeeks**(), ... - **immutable**!
+- `localDate.plusDays(2);`, `.plusWeeks()`, ... - **immutable**!
 
 ![][8]
 
-- local**Time**.**minusHours**(3);, ... - **notice, LocalDate does not operate on hours**, and vice versa!
-- LocalDate is **immutable**! - chain those methods
-- LocalDate.toEpochDay() - number of days since Jan 1 1970
-- LocalDateTime.toEpochTime() - number of seconds
-- LocalTime.toEpo... - does not exist!
-- **Period**.**ofMonths**(1); localDate.**plus**(period); for LocalTime it throws UnsupportedTemporarTypeException
-- **Period**.**of**(1,0,7) - every year and 7 days
+- `localTime.minusHours(3);`, ... - **notice, `LocalDate` does not operate on hours**, and vice versa!
+- `LocalDate` is **immutable**! - chain those methods
+- `LocalDate.toEpochDay()` - number of days since `Jan 1 1970`
+- `LocalDateTime.toEpochTime()` - number of seconds
+- ~~`LocalTime.toEpo...`~~ - does not exist!
+- `Period.ofMonths**(1);` `localDate.plus(period);` for `LocalTime` it throws `UnsupportedTemporarTypeException`
+- `Period.of(1,0,7)` - every year and 7 days
 - chaining does not take any effect, only last will take effect (compiler warns)
-- **Duration **is for hours, minutes and seconds, but it's not on the exam
-- localDate.**getDayOfWeek**(); //MONDAY
-- localDate.**getDayOfYear**(); //30
+- `Duration` is for hours, minutes and seconds, but it's not on the exam
+- `localDate.getDayOfWeek(); //MONDAY`
+- `localDate.getDayOfYear(); //30`
 
 **Formatting Date and Time**
 
-- java.time.format.**DateTimeFormatter**
-- localDate.**format**(DateTimeFormatter.**ISO_LOCAL_DATE**); //2020-02-20
-- DateTimeFormatter.**ISO_LOCAL_TIME **//11:12:34
-- DateTimeFormatter.**ISO_LOCAL_DATE_TIME **//2020-02-20T11:12:34
-- DateTimeFormatter.**ofLocalizedDate**(FormatStyle.SHORT).**format**(dateTime); // 1/20/20 - notice that also has to match, cannot have a time type for localDate (exception)
-- **date formatter **can format **dateTime**, but** dateTime formatter **cannot format **date **(exception)
+- `java.time.format.DateTimeFormatter`
+- `localDate.format(DateTimeFormatter.ISO_LOCAL_DATE); //2020-02-20`
+- `DateTimeFormatter.ISO_LOCAL_TIME //11:12:34`
+- `DateTimeFormatter.ISO_LOCAL_DATE_TIME //2020-02-20T11:12:34`
+- `DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT).format(dateTime); // 1/20/20` - notice that also has to match, cannot have a time type for localDate (exception)
+- **date formatter** can format **dateTime**, but **dateTime formatter** cannot format **date** (exception is thrown)
 - in other words, formatter is only confused with missing data, it's super fine with too much data ;)
-- so can use date.**format**(formatter) as well as formatter.**format**(date)
-- FormatStyle.**SHORT**: 1/20/20 11:12 AM
-- FormatStyle.**MEDIUM**: Jan 20, 2020 11:12:34 AM
-- DateTimeFormatter.**ofPattern**("MMMM dd, yyyy, hh:mm"); //January 20, 2020, 11:12 - but remember, also has to match with the formatted type!
-- in the past - SimpleDateFormat, same stuff
-- be careful, e.g. DateTimeFormatter.**ofLocalizedTime **outputs only time, even though the formatter is for both dates and times
+- so can use `date.format(formatter)` as well as `formatter.format(date)`
+- `FormatStyle.SHORT: 1/20/20 11:12 AM`
+- `FormatStyle.MEDIUM: Jan 20, 2020 11:12:34 AM`
+- `DateTimeFormatter.ofPattern("MMMM dd, yyyy, hh:mm"); //January 20, 2020, 11:12` - but remember, also has to match with the formatted type!
+- in the past - `SimpleDateFormat`, same stuff
+- be careful, e.g. `DateTimeFormatter.ofLocalizedTime` **outputs only time**, even though the formatter is for both dates and times
 
 **Parsing Date and Time**
 
-- LocalDate.**parse**(string, formatter);
-- LocalDate.**parse**(string); - uses default
+- `LocalDate.parse(string, formatter);`
+- `LocalDate.parse(string);` - uses default
 
 ### Chapter 4 Methods And Encapsulation (48% correct, but very very fed up)
 
@@ -296,7 +296,7 @@ where `Zoo` has `static void main` of course (**JDK required for javac, for java
 |  ![][11] |
 | bla() is protected in A, A and B are in different packages  |
 
-- **static variables **vs **static methods **\- a copy of **static variable **is copied to each class, the code of the **static method **not
+- **static variables **vs **static methods** - a copy of **static variable **is copied to each class, the code of the **static method **not
 - **static methods **are used e.g. in utility classes where they don't require object's state, or for sharing state among all instances, e.g. counter
 - **static methods **can be accesses **even after a null has been assigned **to the object reference! k=null; and next k.callStaticMethod() \- works!
 
@@ -315,7 +315,7 @@ where `Zoo` has `static void main` of course (**JDK required for javac, for java
 - **static and non static**
 - **varargs and array**
 - **compiles **when there's
-- **int and Integer **\- autoboxing is only done when is neccessary
+- **int and Integer** - autoboxing is only done when is neccessary
 - **String **and **Object**
 - **int **and **long**; even passing "123" to a method accepting long works
 - official **order of calling overloaded method**:
@@ -338,7 +338,7 @@ where `Zoo` has `static void main` of course (**JDK required for javac, for java
 - **encapsulation **vs **immutability - **both prevent **uncontrolled changes**; easiest way to achieve immutability is to move everything from setters to constructor (if there are mutable fields with getters, you have to defensive copy them, too)
 - **lambda expression **is like an **anonymous method**
 - **a labmda expression can use**: instance and static variables, and method and local parameters as long as it doesn't change them
-- **functional interface **\- has exactly 1 method
+- **functional interface** - has exactly 1 method
 - public interface Predicate{boolean test(T t);} (java.util.function.*)
 - ArrayList.removeIf(Predicate p)
 - _**lenient **- permissive, merciful, or tolerant_
@@ -357,7 +357,7 @@ where `Zoo` has `static void main` of course (**JDK required for javac, for java
 ### Chapter 5 Class Design (45% correct)
 
 - in top level classes only **public **or **default **access is allowed
-- **hiding static methods **\- when a static method is overridden, this is actually called **hiding**, not overriding ;) ("**static**"** **modifiers **must match**!)
+- **hiding static methods** - when a static method is overridden, this is actually called **hiding**, not overriding ;) ("**static**"** **modifiers **must match**!)
 - class/instance **variables are always hidden **when extending - **both **instances exist in memory, within the child class object (and referring them **does not work **like invoking methods polymorphically)
 
 ![][14]
@@ -389,7 +389,7 @@ where `Zoo` has `static void main` of course (**JDK required for javac, for java
 - if not (and it's not an overload), **compilation error** :)
 - unless, unless, **exactly one of them** is marked as **default** (Java 8)
 - okay, last chance :P also **more than one **can be marked as default, but then all implementing classes must override at least **all of them but one**
-- **default method **\- can be defined **only in interface **and **has body**; is **not **assumed to be** abstract**,** nor static**,** nor final**, always assumed to be **public **though
+- **default method** - can be defined **only in interface **and **has body**; is **not **assumed to be** abstract**,** nor static**,** nor final**, always assumed to be **public **though
 - was introduced to keep **backward compatibility** in Java 8
 - implementing classes can override but don't have to
 - they **require **implementing class to be invoked (cannot invoke on the interface)
@@ -397,9 +397,9 @@ where `Zoo` has `static void main` of course (**JDK required for javac, for java
 ![][17]
 
 - **default method **can be **redeclared **as **abstract **in extending interface/implementing abstract class!
-- **static method of an interface **\- also new in Java 8 - just like a static method, but does **not get inherited**! must be declared with word "**static**"; must be referred to using the **interface name **(even in implementing class)
-- **virtual method **\- this is connected to plymorphism; it's a method whose implementation is not determined until runtime; all non-final, non-static and non-private methods in Java are **virtual**
-- (understanding **polymorphism **\- of course, you need to know that if you create an object and assign it to reference of the type of its **superclass**, and call a method on it, **still the subclass' method** will be invoked)
+- **static method of an interface** - also new in Java 8 - just like a static method, but does **not get inherited**! must be declared with word "**static**"; must be referred to using the **interface name **(even in implementing class)
+- **virtual method** - this is connected to plymorphism; it's a method whose implementation is not determined until runtime; all non-final, non-static and non-private methods in Java are **virtual**
+- (understanding **polymorphism** - of course, you need to know that if you create an object and assign it to reference of the type of its **superclass**, and call a method on it, **still the subclass' method** will be invoked)
 - this, compiles (aaaarrrgh!):
 
 ![][18]
@@ -419,7 +419,7 @@ where `Zoo` has `static void main` of course (**JDK required for javac, for java
 
 ### Chapter 6 Exceptions (80% correct, 16/20)
 
-- **Errors **\- they are the other subclass of **Throwable**, and are meant to express something that went **very wrong**; **JVM **throws them; you're **not supposed **to catch them, as anyway you won't be able to fix them;
+- **Errors** - they are the other subclass of **Throwable**, and are meant to express something that went **very wrong**; **JVM **throws them; you're **not supposed **to catch them, as anyway you won't be able to fix them;
 - RuntimeExceptions you may catch
 - you **cannot omit braces **with try-catch, like you can with if and with when
 - **catch **and **finally **blocks have to be **in the right order**; **at least one **must be present
@@ -438,7 +438,7 @@ where `Zoo` has `static void main` of course (**JDK required for javac, for java
 - **IOException**
 - **FileNotFoundException **(extends IOException)
 - error examples:
-- **ExceptionInitializerError **\- when static initializer block in a class throws an exception
+- **ExceptionInitializerError** - when static initializer block in a class throws an exception
 - **StackOverflowError**
 - **NoClassDefFoundError**
 - overriding/implementing method** can declare less checked exceptions**, but not more; in case of runtime exceptions anything is compiling
@@ -447,7 +447,7 @@ where `Zoo` has `static void main` of course (**JDK required for javac, for java
 ![][20]
 
 - all of these exceptions have default constructor, yaay!
-- **Errors are allowed to be handled or declared **\- this sentence is true; yes, they should not be, but they are allowed to!
+- **Errors are allowed to be handled or declared** - this sentence is true; yes, they should not be, but they are allowed to!
 
 **
 **
