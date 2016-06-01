@@ -352,8 +352,6 @@ where `Zoo` has `static void main` of course (**JDK required for javac, for java
 
 ![][13]
 
-####
-
 ### Chapter 5 Class Design (45% correct)
 
 - in top level classes only **public** or **default** access is allowed
