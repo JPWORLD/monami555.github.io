@@ -601,3 +601,23 @@ Very important: please comment if you find an error.
 <div id="q2_6" class="collapse collapsible bg-info" markdown="1">
 
 </div>
+
+### .. also, know that
+
+- _autoboxing_ does not work with `Predicate`s
+- there is Java process managed by JVM, and this process executes the `static void main`
+- `java.lang.*` is automatically imported
+- this is correct: `double i = 1_000_000.0`, but this not: `double i = 1_000_000_.0` or double `i = _1_000_000.0` (also not)
+- Oracle claims that _"Java prevents memory leaks"_, and that _"Java is secure because it runs inside JVM"_, and that Java 8 is still an OO language
+- `^` means XOR
+- `if(objectOfTypeA==objectOfTypeB)` will not even compile
+- `String implements CharSequence`
+- `new StringBuilder(10)` is not `"10"` but it is setting the initial capacity to `10`
+- `StringBuffer` is just an old, thread-safe, slow version of `StringBuilder`
+- default constructors are automatically added to the `*.class` file by the compiler, and as soon as you write a default constructor yourself, it is no longer called a default constructor
+- `package private` access is synonym for `default access`
+- _lenient_ means _permissive_, _merciful_ or _tolerant_
+- it is _allowed_ to catch `Error`s; it should not be done but it is allowed
+- `long x=(y=3)` is valid expression and it sets both `x` and `y` to `3`
+- if you get a question about number of code blocks, know that whether a block is nested inside another or not one doesn't matter - total number of `{}` pairs counts
+- `finalize()` is called only once, on the first attempt to garbage collect the object (I actually just managed to almost freeze my computer by throwing a `RuntimeException` in the `finalize()` method.. not what I expected..)
