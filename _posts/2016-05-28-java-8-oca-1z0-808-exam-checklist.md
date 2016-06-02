@@ -167,64 +167,78 @@ Very important: please comment if you see an error.
   - _subclass_ means an actual object of subclass type; you cannot access another object's protected field that is in another package, no matter how its type related to yours is
 </div>
 
-- method and variable hiding; when is hiding not allowed
-<button data-toggle="collapse" data-target="#q10_1" class="btn-link">[see]</button>
-<div id="q10_1" class="collapse collapsible bg-info" markdown="1">
+- can you change the value of a `static final` class variable and if yes then how
+<button data-toggle="collapse" data-target="#q10_2" class="btn-link">[see]</button>
+<div id="q10_2" class="collapse collapsible bg-info" markdown="1">
 
-</div>
-
-- labels
-<button data-toggle="collapse" data-target="#q10_1" class="btn-link">[see]</button>
-<div id="q10_1" class="collapse collapsible bg-info" markdown="1">
-
-</div>
-
-- can you change the value of a `static` `final` instance variable and if yes then how
-<button data-toggle="collapse" data-target="#q10_1" class="btn-link">[see]</button>
-<div id="q10_1" class="collapse collapsible bg-info" markdown="1">
-
+- you cannot change it, but if you didn't initialize it right where you defined it, you can still set it in the `static{}` class initializer
 </div>
 
 - how to do a static import: is it `import static` or `static import`
-<button data-toggle="collapse" data-target="#q10_1" class="btn-link">[see]</button>
-<div id="q10_1" class="collapse collapsible bg-info" markdown="1">
+<button data-toggle="collapse" data-target="#q10_3" class="btn-link">[see]</button>
+<div id="q10_3" class="collapse collapsible bg-info" markdown="1">
 
+- `import static`; `import` must be first
+- remember that static imports are only for class memebers, not clases
+- remember that statically importing a class member does not import the owning class
 </div>
 
 - according to what and in which order is the right overloaded method determined
-<button data-toggle="collapse" data-target="#q10_1" class="btn-link">[see]</button>
-<div id="q10_1" class="collapse collapsible bg-info" markdown="1">
-
+<button data-toggle="collapse" data-target="#q10_4" class="btn-link">[see]</button>
+<div id="q10_4" class="collapse collapsible bg-info" markdown="1">
+1. exact match
+2. larger primitive type
+3. autoboxing
+4. varargs
+- while trying to find an overload, **Java does max one conversion**, later is compilation error!
 </div>
 
 - what means _covariant return type_
-<button data-toggle="collapse" data-target="#q10_1" class="btn-link">[see]</button>
-<div id="q10_1" class="collapse collapsible bg-info" markdown="1">
+<button data-toggle="collapse" data-target="#q10_5" class="btn-link">[see]</button>
+<div id="q10_5" class="collapse collapsible bg-info" markdown="1">
 
+- in inheriting class the return type must be same or more narrow than in superclass' method
+</div>
+
+- method and variable hiding; when is hiding not allowed
+<button data-toggle="collapse" data-target="#q10_6" class="btn-link">[see]</button>
+<div id="q10_6" class="collapse collapsible bg-info" markdown="1">
+
+- hiding refers to one of the two cases:
+  - when a `static` method is overridden, this is actually called **hiding**, not overriding ;)
+  - all fields are always hidden when extending - both instances exist in memory independently, within the child class object; to refer to the parent field you need to write `ParentClassName.fieldName`
+- you cannot hide `final` members
+</div>
+
+- labels
+<button data-toggle="collapse" data-target="#q10_7" class="btn-link">[see]</button>
+<div id="q10_7" class="collapse collapsible bg-info" markdown="1">
+
+- `LaBel:` is an optional pointer to the head of a statement
+- used like this: `break LABEL;` (break from the statement labelled like this) or `continue LABEL;`
 </div>
 
 - what is the difference between `interface` and `abstract interface`
-<button data-toggle="collapse" data-target="#q10_1" class="btn-link">[see]</button>
-<div id="q10_1" class="collapse collapsible bg-info" markdown="1">
+<button data-toggle="collapse" data-target="#q10_8" class="btn-link">[see]</button>
+<div id="q10_8" class="collapse collapsible bg-info" markdown="1">
 
-</div>
-
-- is it allowed to override a method while the signature doesn't match?
-<button data-toggle="collapse" data-target="#q10_1" class="btn-link">[see]</button>
-<div id="q10_1" class="collapse collapsible bg-info" markdown="1">
-
+- none, all interfaces are assumed to be `abstract`, and each that is not marked so, will be changed to `abstract interface` by the compiler
 </div>
 
 - what modifiers are assumed in an interface
-<button data-toggle="collapse" data-target="#q10_1" class="btn-link">[see]</button>
-<div id="q10_1" class="collapse collapsible bg-info" markdown="1">
+<button data-toggle="collapse" data-target="#q10_10" class="btn-link">[see]</button>
+<div id="q10_10" class="collapse collapsible bg-info" markdown="1">
 
+- variables are assumed to be `public static final` (so must be initialized, even if no final is explicitly written!)
+- methods are assumed to be `public abstract/default/static`
 </div>
 
 - what is `virtual` method
-<button data-toggle="collapse" data-target="#q10_1" class="btn-link">[see]</button>
-<div id="q10_1" class="collapse collapsible bg-info" markdown="1">
+<button data-toggle="collapse" data-target="#q10_11" class="btn-link">[see]</button>
+<div id="q10_11" class="collapse collapsible bg-info" markdown="1">
 
+- it's a method whose implementation is not determined until runtime
+- all non-final, non-static and non-private methods in Java are virtual
 </div>
 
 ### Loops
@@ -304,48 +318,73 @@ Very important: please comment if you see an error.
 4. constructor
 </div>
 
-### Java 8 stuff (TODO)
+### Java 8 stuff
 
 - lambda expressions - when can you omit braces, semicolons, variables, etc
-<button data-toggle="collapse" data-target="#q2_6" class="btn-link">[see]</button>
-<div id="q2_6" class="collapse collapsible bg-info" markdown="1">
+<button data-toggle="collapse" data-target="#q12_1" class="btn-link">[see]</button>
+<div id="q12_1" class="collapse collapsible bg-info" markdown="1">
 
+- if `{}` are used, `return` and `;` must be used too, and vice versa
+- if type of input argument is specified, it must be wrapped in `()`
+- if there are more thn 2 input args, they have to be wrapped in `()`
 </div>
 
 - can a lambda expression access the containing class' instance variables
-<button data-toggle="collapse" data-target="#q2_6" class="btn-link">[see]</button>
-<div id="q2_6" class="collapse collapsible bg-info" markdown="1">
+<button data-toggle="collapse" data-target="#q12_2" class="btn-link">[see]</button>
+<div id="q12_2" class="collapse collapsible bg-info" markdown="1">
 
-</div>
-
-- what is a default method
-<button data-toggle="collapse" data-target="#q2_6" class="btn-link">[see]</button>
-<div id="q2_6" class="collapse collapsible bg-info" markdown="1">
-
-</div>
-
-- `default` methods - what happens on any inheritance collisions
-<button data-toggle="collapse" data-target="#q2_6" class="btn-link">[see]</button>
-<div id="q2_6" class="collapse collapsible bg-info" markdown="1">
-
-</div>
-
-- can `default` method be redeclared `abstract` method
-<button data-toggle="collapse" data-target="#q2_6" class="btn-link">[see]</button>
-<div id="q2_6" class="collapse collapsible bg-info" markdown="1">
-
-</div>
-
-- what is a _functional interface_
-<button data-toggle="collapse" data-target="#q2_6" class="btn-link">[see]</button>
-<div id="q2_6" class="collapse collapsible bg-info" markdown="1">
-
+- can access everything as long as it doesn't attempt to change them
 </div>
 
 - example of using `Predicate`
-<button data-toggle="collapse" data-target="#q2_6" class="btn-link">[see]</button>
-<div id="q2_6" class="collapse collapsible bg-info" markdown="1">
+<button data-toggle="collapse" data-target="#q12_3" class="btn-link">[see]</button>
+<div id="q12_3" class="collapse collapsible bg-info" markdown="1">
 
+- `bunnyArrayList.removeIf(s->s.charAt(0)!='h');` - removes all bunnies starting with 'h', cool isn't it :D
+</div>
+
+- what is a `default` method
+<button data-toggle="collapse" data-target="#q12_4" class="btn-link">[see]</button>
+<div id="q12_4" class="collapse collapsible bg-info" markdown="1">
+
+- defined in an interface
+- has body
+- is not `abstract` but still `public`
+- it's like default implementation in abstract class - can be overridden but doesn't have to
+- cannot be invoked on the interface
+</div>
+
+- `default` methods - what happens on any inheritance collisions
+<button data-toggle="collapse" data-target="#q12_5" class="btn-link">[see]</button>
+<div id="q12_5" class="collapse collapsible bg-info" markdown="1">
+
+- as long as there is no ambiguity which method should be called when (e.g. one of them is overridden in the hierarchy) everything is ok, otherwise compilation error
+</div>
+
+- can `default` method be redeclared to be an `abstract` method
+<button data-toggle="collapse" data-target="#q12_6" class="btn-link">[see]</button>
+<div id="q12_6" class="collapse collapsible bg-info" markdown="1">
+
+- yes, in an extending/implementing interface/class
+</div>
+
+
+- what is a `static` interface method
+<button data-toggle="collapse" data-target="#q12_8" class="btn-link">[see]</button>
+<div id="q12_8" class="collapse collapsible bg-info" markdown="1">
+
+- is `static` and inside interface
+- assumed to be `public`
+- must be invoked on the interface, is not inherited
+</div>
+
+
+- what is a _functional interface_
+<button data-toggle="collapse" data-target="#q12_7" class="btn-link">[see]</button>
+<div id="q12_7" class="collapse collapsible bg-info" markdown="1">
+
+- an interface which has exactly 1 method
+- (annotated with `@FunctionalInterface`, but this is out of scope)
 </div>
 
 ### Java APIs
@@ -586,24 +625,43 @@ Very important: please comment if you see an error.
   - `UnsupportedTemporalTypeException` - when you try to use time with date object, or date with time object
 </div>
 
-### Exceptions (TODO)
+### Exceptions
 
 - errors, checked exceptions and runtime exceptions - who throws what and who catches what
-<button data-toggle="collapse" data-target="#q2_6" class="btn-link">[see]</button>
-<div id="q2_6" class="collapse collapsible bg-info" markdown="1">
+<button data-toggle="collapse" data-target="#q12_1" class="btn-link">[see]</button>
+<div id="q12_1" class="collapse collapsible bg-info" markdown="1">
 
+- `Errors` - thrown by JVM, shouldn't catch
+- `RuntimeException` - thrown by JVM or developer, you may catch
+- checked exceptions - thrown by developer, you must catch
 </div>
 
 - in implementing/overriding method, can we rather declare more or less exceptions than the superclass has
-<button data-toggle="collapse" data-target="#q2_6" class="btn-link">[see]</button>
-<div id="q2_6" class="collapse collapsible bg-info" markdown="1">
+<button data-toggle="collapse" data-target="#q12_2" class="btn-link">[see]</button>
+<div id="q12_2" class="collapse collapsible bg-info" markdown="1">
 
+- checked exceptions - only less
+- unchecked - doesn't matter
 </div>
 
 - give examples of `RuntimeException` (6), checked exception (2) and `Error` (3)
-<button data-toggle="collapse" data-target="#q2_6" class="btn-link">[see]</button>
-<div id="q2_6" class="collapse collapsible bg-info" markdown="1">
+<button data-toggle="collapse" data-target="#q12_3" class="btn-link">[see]</button>
+<div id="q12_3" class="collapse collapsible bg-info" markdown="1">
 
+- `RuntimeException` examples:
+  - `ArithmeticException`
+  - `ArrayIndexOutOfBoundsException`
+  - `ClassCastException`
+  - `IllegalArgumentException`
+  - `NullPointerException`(extends IllegalArgumentException)
+  - `NumberFormatException`
+- checked exception examples:
+  - `IOException`
+  - `FileNotFoundException` (extends IOException)
+- error examples:
+  - `ExceptionInitializerError` - when static initializer block in a class throws an exception
+  - `StackOverflowError`
+  - `NoClassDefFoundError`
 </div>
 
 ### .. also, know that
