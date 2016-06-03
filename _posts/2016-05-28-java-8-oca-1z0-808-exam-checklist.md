@@ -18,7 +18,7 @@ Again, trying to make a summary of the summary ;) (see this [post](/2016/03/03/p
 
 Very important: please comment if you see an error.
 
-Update: I passed :) It was a really really annoying exam to prepare.
+Update: I passed :) It was a really really annoying exam to prepare. And yes it was a good idea to do some online mock exams, even as late as on the day before the exam.
 
 </div>
 
