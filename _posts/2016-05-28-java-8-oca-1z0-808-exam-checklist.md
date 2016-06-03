@@ -17,6 +17,9 @@ draft: true
 Again, trying to make a summary of the summary ;) (see this [post](/2016/03/03/preparation-for-java-8-oca-1z0-808-exam.html) for more context). Tried to put the main topics together in a form of questions, along with the short answers (click on the "see" links to see them).
 
 Very important: please comment if you see an error.
+
+Update: I passed :) It was a really really annoying exam to prepare.
+
 </div>
 
 ### Checklist on **every** question

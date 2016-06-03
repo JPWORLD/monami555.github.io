@@ -152,6 +152,8 @@ public -------------> default---------------> private
 
 Be aware that "visible to subclasses" does not mean that every object has access to `protected` fields and methods of every concrete object that is of its supertype. It has access only to its own inherited fields and methods. May be obvious, but after hours of reading OCA study guide that was no longer that clear..
 
-You can also say, that _for any class the following holds_:
+You can also ignore the whole thing with granting package access and just say, that _for any class the following holds_:
 
-> for every other class in the same package everything that is not marked as `private` is seen as if it was marked `public`.
+> inside every other class in the same package everything that is not marked as `private` is seen from inside the first class as if it was marked `public`.
+
+I just made the above up and I think it does make sense.. at least now :)
