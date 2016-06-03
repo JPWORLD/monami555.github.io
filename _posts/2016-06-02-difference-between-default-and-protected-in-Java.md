@@ -20,7 +20,7 @@ The `public` and `private` are easy to understand. The first one means _"visible
 
 Then comes the `protected`. Oh, that is like something in between, visible only to me and all my subclasses. Okay clear, right.
 
-And finally, the _default_ access. We usually say that it is just like `protected` but plus visibility for classes from the same package.
+And finally, the _default_ access. We usually say that it is just like `protected` but without the visibility for subclasses, only classes from the same package. Kind of special case.
 
 ### The problem
 
