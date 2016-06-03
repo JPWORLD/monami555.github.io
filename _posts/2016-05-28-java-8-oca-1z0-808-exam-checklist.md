@@ -29,6 +29,7 @@ Very important: please comment if you see an error.
 - are we not trying to call non-`static` method from a `static` method
 - are there any uninitialized local variables or class constants
 - is there a method called on an immutable object and not assigned to anything afterwards (look especially at Strings and Dates)
+- are the `throws` in checked exceptions propagated correctly
 - don't try to compute tricky variable reassignments in memory, that's a trap - take the paper
 
 ### Questions around Java
@@ -244,23 +245,24 @@ Very important: please comment if you see an error.
 ### Loops
 
 - the `do-while` loop and why to use it at all
-<button data-toggle="collapse" data-target="#qq11_1" class="btn-link">[see]</button>
+<button data-toggle="collapse" data-target="#q11_1" class="btn-link">[see]</button>
 <div id="q11_1" class="collapse collapsible bg-info" markdown="1">
 
-- `do{...}while(booleanExpression)` - you can use it when you want that the body is executed **at least once**
+- `do{...}while(booleanExpression);` - you can use it when you want that the body is executed **at least once**
+- note that `do System.out.println();while(booleanExpression);` is also correct syntax
 </div>
 
 - what are a segments of the `for` loop and which one can contain multiple expressions
-<button data-toggle="collapse" data-target="#qq11_1" class="btn-link">[see]</button>
-<div id="qq11_1" class="collapse collapsible bg-info" markdown="1">
+<button data-toggle="collapse" data-target="#qq11_2" class="btn-link">[see]</button>
+<div id="qq11_2" class="collapse collapsible bg-info" markdown="1">
 
 - `for(initialization; booleanExpression; updateStatement){}`
 - everything except the booleanExpression in the middle can have multiple expressions, seprarated by a comma `,`
 </div>
 
 - where can you use the `continue` and `break` keywords
-<button data-toggle="collapse" data-target="#qq11_1" class="btn-link">[see]</button>
-<div id="qq11_1" class="collapse collapsible bg-info" markdown="1">
+<button data-toggle="collapse" data-target="#qq11_3" class="btn-link">[see]</button>
+<div id="qq11_3" class="collapse collapsible bg-info" markdown="1">
 
 - `continue` only inside loops
 - `break` only inside loops and `switch` statement
@@ -275,7 +277,7 @@ Very important: please comment if you see an error.
 - must start with a letter (Unicode) or `_` or `$`
 - cannot start with a number
 - can contain letters, numbers, `_` and `$`
-- cannot be same as reserved keyword
+- cannot be same as reserved keyword (if it's different letter case then it's fine though)
 </div>
 
 - when will you get compilation error on uninitialized variable and when not
@@ -318,15 +320,23 @@ Very important: please comment if you see an error.
 4. constructor
 </div>
 
+- can an `abstract` class extend a non `abstract` class
+<button data-toggle="collapse" data-target="#q4_5" class="btn-link">[see]</button>
+<div id="q4_5" class="collapse collapsible bg-info" markdown="1">
+
+- shit, actually yes!
+</div>
+
+
 ### Java 8 stuff
 
 - lambda expressions - when can you omit braces, semicolons, variables, etc
 <button data-toggle="collapse" data-target="#q12_1" class="btn-link">[see]</button>
 <div id="q12_1" class="collapse collapsible bg-info" markdown="1">
 
-- if `{}` are used, `return` and `;` must be used too, and vice versa
+- if `{}` are used, `return` and `;` must be used too, they always come together
 - if type of input argument is specified, it must be wrapped in `()`
-- if there are more thn 2 input args, they have to be wrapped in `()`
+- if there are more than 2 input args, they have to be wrapped in `()` (if one arg has type, then all of them have to have it)
 </div>
 
 - can a lambda expression access the containing class' instance variables
@@ -340,6 +350,7 @@ Very important: please comment if you see an error.
 <button data-toggle="collapse" data-target="#q12_3" class="btn-link">[see]</button>
 <div id="q12_3" class="collapse collapsible bg-info" markdown="1">
 
+- `java.util.function.Predicate`
 - `bunnyArrayList.removeIf(s->s.charAt(0)!='h');` - removes all bunnies starting with 'h', cool isn't it :D
 </div>
 
@@ -415,10 +426,10 @@ Very important: please comment if you see an error.
 </div>
 
 - methods on `StringBuilder`
-<button data-toggle="collapse" data-target="#q6_1" class="btn-link">[see]</button>
-<div id="q6_1" class="collapse collapsible bg-info" markdown="1">
+<button data-toggle="collapse" data-target="#q6_3" class="btn-link">[see]</button>
+<div id="q6_3" class="collapse collapsible bg-info" markdown="1">
 - same as in `String`:
-  - `length()`, `String substring()`, indexOf()`, `charAt()`
+  - `length()`, `String substring()`, `indexOf()`, `charAt()`
 - new ones:
   - `append(String)`
   - `insert(offset, String)`
@@ -428,8 +439,8 @@ Very important: please comment if you see an error.
 </div>
 
 - does `str.replace(oldChar, newChar)` replace all or just the first occurence?
-<button data-toggle="collapse" data-target="#q6_1" class="btn-link">[see]</button>
-<div id="q6_1" class="collapse collapsible bg-info" markdown="1">
+<button data-toggle="collapse" data-target="#q6_4" class="btn-link">[see]</button>
+<div id="q6_4" class="collapse collapsible bg-info" markdown="1">
 - it replaces all the occurences
 </div>
 
@@ -453,7 +464,7 @@ Very important: please comment if you see an error.
   - `int  []i = {1,2};`
   - `int  i[] = {1,2};`
   - `int i [] = {1,2};`
-  - and analogically for 2+D
+  - and analogically for 2D+
 </div>
 
 - how can you get an exception related to object type while operating on arrays? which exception is it?
@@ -486,7 +497,7 @@ Very important: please comment if you see an error.
 - `java.util.Arrays.sort(array)`
 </div>
 
-- what does `Arrays.binarySearch(array,what)` return in case it did not find the element
+- what does `Arrays.binarySearch(array, what)` return in case it did not find the element
 <button data-toggle="collapse" data-target="#q7_6" class="btn-link">[see]</button>
 <div id="q7_6" class="collapse collapsible bg-info" markdown="1">
 
@@ -505,8 +516,8 @@ Very important: please comment if you see an error.
   - `new ArrayList(anotherList)`
 - methods:
   - `isEmpty()`, `size()`, `clear()`
-  - `boolean add(element)` - always returns `true`
-  - `void add(index, element)`
+  - `boolean add(element)` - note the **boolean** there will be questions about it; it always returns `true`
+  - `void add(index, element)` - here is no boolean
   - `boolean remove(element)`
   - `Object remove(int index)` - be careful when you remove an `int` element! it will resolve to this method instead of the one above
   - `removeIf(Predicate)`
@@ -545,9 +556,10 @@ Very important: please comment if you see an error.
 <button data-toggle="collapse" data-target="#q9_1" class="btn-link">[see]</button>
 <div id="q9_1" class="collapse collapsible bg-info" markdown="1">
 
-- `valueOf` creates the wrapper type; you can remember that the method which creates the object has same name for all wrappers, because objects have common superclass `Object`, and primitive types don't have a superclass; or you can remember that if `parseInt()` returned an `Integer` it should be called ~~`parseInteger()`~~
-  - `Integer.parseInt()` creates `int` out of many other types
-  - `Integer.valueOf()` creates `Integer` out of many other types
+- `Integer.parseInt()` creates `int` out of many other types
+- `Integer.valueOf()` creates `Integer` out of many other types
+
+- you can remember that the method which creates the object has same name for all wrappers, because objects have common superclass `Object`, and primitive types don't have a superclass; or you can remember that if `parseInt()` returned an `Integer` it should be called ~~`parseInteger()`~~
 - remember that `Character` does not participate in this stuff
 </div>
 
@@ -557,7 +569,7 @@ Very important: please comment if you see an error.
 <button data-toggle="collapse" data-target="#q3_1" class="btn-link">[see]</button>
 <div id="q3_1" class="collapse collapsible bg-info" markdown="1">
 
-- `LocalDate`, `LocalTime`, `LocalDateTime`, in `java.time.*` package
+- `LocalDate`, `LocalTime`, `LocalDateTime`, all in `java.time.*` package
 - `DateTimeException`
 </div>
 
@@ -628,25 +640,28 @@ Very important: please comment if you see an error.
 ### Exceptions
 
 - errors, checked exceptions and runtime exceptions - who throws what and who catches what
-<button data-toggle="collapse" data-target="#q12_1" class="btn-link">[see]</button>
-<div id="q12_1" class="collapse collapsible bg-info" markdown="1">
+<button data-toggle="collapse" data-target="#q13_1" class="btn-link">[see]</button>
+<div id="q13_1" class="collapse collapsible bg-info" markdown="1">
 
 - `Errors` - thrown by JVM, shouldn't catch
 - `RuntimeException` - thrown by JVM or developer, you may catch
 - checked exceptions - thrown by developer, you must catch
+- if they ask you about programmatic exceptions, then according to [here](https://starblind.org/code/2016/03/13/oca-java-63-common-exceptions-and-errors/), _programmatically thrown exception means an exception thrown by an application/ API developer_
+  - `NumberFormatException`, `AssertionError`, `IllegalArgumentException`, `IllegalStateException`
+  - custom exceptions
 </div>
 
 - in implementing/overriding method, can we rather declare more or less exceptions than the superclass has
-<button data-toggle="collapse" data-target="#q12_2" class="btn-link">[see]</button>
-<div id="q12_2" class="collapse collapsible bg-info" markdown="1">
+<button data-toggle="collapse" data-target="#q13_2" class="btn-link">[see]</button>
+<div id="q13_2" class="collapse collapsible bg-info" markdown="1">
 
 - checked exceptions - only less
 - unchecked - doesn't matter
 </div>
 
 - give examples of `RuntimeException` (6), checked exception (2) and `Error` (3)
-<button data-toggle="collapse" data-target="#q12_3" class="btn-link">[see]</button>
-<div id="q12_3" class="collapse collapsible bg-info" markdown="1">
+<button data-toggle="collapse" data-target="#q13_3" class="btn-link">[see]</button>
+<div id="q13_3" class="collapse collapsible bg-info" markdown="1">
 
 - `RuntimeException` examples:
   - `ArithmeticException`
