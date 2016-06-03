@@ -132,7 +132,8 @@ So instead of presenting the 4 access modes as a list, I would rather present it
   </tr>
 </table>
 
-Highly illogical, isn't it? But I bet that is why it causes so much confusion when you try to shrink it to a list.
+
+Highly illogical, isn't it? But I bet that is why it caused me so much confusion when I tried to shrink it to a list.
 
 ### The solution
 
@@ -150,7 +151,7 @@ public -------------> default---------------> private
 
 ```
 
-Be aware that "visible to subclasses" does not mean that every object has access to `protected` fields and methods of every concrete object that is of its supertype. It has access only to its own inherited fields and methods. May be obvious, but after hours of reading OCA study guide that was no longer that clear..
+Be aware that "visible to subclasses" does not mean that every object has access to `protected` fields and methods of every concrete object that is of its supertype. It has access only to its own inherited fields and methods. May be obvious, but after hours of reading OCA study guide and doing mock exams that's what was no longer clear to me..
 
 You can also ignore the whole thing with granting package access and just say, that _for any class the following holds_:
 
