@@ -22,3 +22,5 @@ Somehow it happened that for every problem I encountered, I could find an accept
 - Generated Table of Contents [http://www.seanbuscay.com/blog/jekyll-toc-markdown/](http://www.seanbuscay.com/blog/jekyll-toc-markdown/)
 - Search functionality by Jekyll [http://jekyll.tips/jekyll-casts/jekyll-search-using-lunr-js/](http://jekyll.tips/jekyll-casts/jekyll-search-using-lunr-js/)
 - Loading CSS Spinner by @tobiasahlin [http://tobiasahlin.com/spinkit/](http://tobiasahlin.com/spinkit/)
+
+The clickable and searchable tags I figured out myself, somehow :) (built on top of the Jekyll search article).
