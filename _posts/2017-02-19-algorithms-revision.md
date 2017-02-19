@@ -81,7 +81,7 @@ Geometric series have the index of the loop involved in the exponent:
         </mrow>
         <mrow>
             <mi>a</mi>
-            <mo>-</mi>
+            <mo>-</mo>
             <mn>1</mn>
         </mrow>
     </mfrac>
