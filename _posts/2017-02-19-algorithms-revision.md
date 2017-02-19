@@ -85,4 +85,28 @@ Geometric series have the index of the loop involved in the exponent:
             <mn>1</mn>
         </mrow>
     </mfrac>
+    <mo>=</mo>
+    <mi>Θ(</mi> 
+    <msup>
+         <mi>a</mi>
+         <mi>n+1</mi>
+    </msup>
+    <mi>)</mi>
+</math>
+
+for for `a>=1`.
+
+What may be also relevant:
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+    <munderover>
+      <mo>&sum;</mo>
+      <mi>i=1</mi>
+      <mi>n</mi>
+    </munderover>
+    <mi>i</mi>
+    <mo>×</mo>
+    <mi>i!</mi>
+    <mo>=</mo>
+    <mi>(n+1)!-1</mi>
 </math>
