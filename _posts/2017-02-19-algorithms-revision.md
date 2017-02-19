@@ -21,7 +21,6 @@ Revising the most important things about data structures and algorithms.
 First some mathematics:
 
 <math xmlns="http://www.w3.org/1998/Math/MathML">
- <mstyle displaymode="true">  
     <munderover>
       <mo>&sum;</mo>
       <mn>i=1</mn>
@@ -30,7 +29,6 @@ First some mathematics:
     <mfrac><mn>1</mn><mi>k</mi></mfrac>
     <mo>=</mo>
     <mn>1,5</mn>
-  </mstyle>
 </math>
 
 $$
