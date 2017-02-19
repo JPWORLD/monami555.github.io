@@ -70,6 +70,7 @@ Geometric series have the index of the loop involved in the exponent:
       <mi>a</mi>
       <mi>i</mi>
     </msup>
+    <mo>=</mo>
     <mfrac>
         <mrow>
             <msup>
@@ -77,7 +78,7 @@ Geometric series have the index of the loop involved in the exponent:
               <mi>n+1</mi>
             </msup>
             <mo>-</mo>
-            <mn>2</mn>
+            <mn>1</mn>
         </mrow>
         <mrow>
             <mi>a</mi>
