@@ -1,5 +1,4 @@
 # enable markdown that is compatible with GitHub Pages
 markdown: kramdown
 kramdown:
-  input: GFM
   math_engine: mathjax
