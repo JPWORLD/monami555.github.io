@@ -16,6 +16,11 @@ Revising the most important things about data structures and algorithms.
   * [Complexity analysis](#complexity)
 
 ## Complexity analysis <a id="complexity"></a>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>a</mi><mo>&#x2260;</mo><mn>0</mn>
+</math>,
+
 $$ sdsd $$
 
 sdfsfsdfd $ fljdsfljhds $  dsfkljdslkfjlkdsjflsd
