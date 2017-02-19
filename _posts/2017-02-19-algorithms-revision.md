@@ -18,19 +18,20 @@ Revising the most important things about data structures and algorithms.
 ## Complexity analysis <a id="complexity"></a>
 <!-- http://docs.mathjax.org/en/latest/start.html -->
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
-});
-</script>
-<script type="text/javascript" async src="https://github.com/mathjax/MathJax/blob/master/MathJax.js?config=TeX-AMS_CHTML"></script>
-
 First some mathematics:
 
 <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi><mo>&#x2260;</mo><mn>0</mn>
-</math>,
-
+ <mstyle displaymode="true">  
+    <munderover>
+      <mo>&sum;</mo>
+      <mn>i=1</mn>
+      <mn>n</mn>
+    </munderover>
+    <mfrac><mn>1</mn><mi>k</mi></mfrac>
+    <mo>=</mo>
+    <mn>1,5</mn>
+  </mstyle>
+</math>
 
 $$
 \begin{align*}
