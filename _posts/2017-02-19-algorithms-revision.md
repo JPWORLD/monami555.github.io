@@ -26,31 +26,29 @@ First some mathematics:
       <mn>i=1</mn>
       <mn>n</mn>
     </munderover>
-    <mfrac><mn>1</mn><mi>k</mi></mfrac>
     <mo>=</mo>
-    <mn>1,5</mn>
+    <mfrac><mi>n(n+1)</mi><mn>2</mn></mfrac>
 </math>
-
-$$
-\begin{align*}
-  \sum_{i=1}^n = \frac{n(n+1)}{2}
-\end{align*}
-$$
-
-
-<p>When `a != 0`, there are two solutions to `ax^2 + bx + c = 0` and
-they are</p>
-<p style="text-align:center">
-  `x = (-b +- sqrt(b^2-4ac))/(2a) .`
-</p>
-
 
 because mathematical induction. Important to remember, as this means that the complexity of something that takes i steps with every iteration from i=0..n has complexity of (bit theta)(n^2). And the generified rule is:
 
-$$
-\begin{align*}
-  S(n,p) = \sum_{i}^n i^p = \theta n^(p+1)
-\end{align*}
-$$
-
-sdfaklsdfjkasldjfkjdsahlfkhsdakjfhlasdkjfhksd
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mi>S(n, p)</mi>
+    <mo>=</mo>
+    <munderover>
+      <mo>&sum;</mo>
+      <mn>i</mn>
+      <apply>
+      <power>
+          <mi>i</mi>
+          <mi>p</mi>
+      </power>
+    </munderover>
+    <mo>=</mo>
+    <mi>Θ(</mi> 
+    <power>
+         <mi>n</mi>
+         <mi>p+1</mi>
+    </power>
+    <mi>)</mi>
+</math>
