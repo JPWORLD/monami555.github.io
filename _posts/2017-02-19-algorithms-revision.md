@@ -8,7 +8,7 @@ tags:
 commentIssueId: 34
 ---
 <div class="bg-info panel-body" markdown="1">
-[under construction]
+[under construction]<br/>
 Revising the most important things about data structures and algorithms.
 </div>
 
@@ -18,5 +18,7 @@ Revising the most important things about data structures and algorithms.
 ## Complexity analysis <a id="complexity"></a>
 
 $$
-\sum_{i=1}^n = \frac{n(n+1)}{2}
+\begin{align*}
+  \sum_{i=1}^n = \frac{n(n+1)}{2}
+\end{align*}
 $$
