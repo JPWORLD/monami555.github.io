@@ -38,16 +38,16 @@ because mathematical induction. Important to remember, as this means that the co
     <munderover>
       <mo>&sum;</mo>
       <mn>i</mn>
-      <power>
+      <msup>
           <mi>i</mi>
           <mi>p</mi>
-      </power>
+      </msup>
     </munderover>
     <mo>=</mo>
     <mi>Θ(</mi> 
-    <power>
+    <msup>
          <mi>n</mi>
-         <mi>p</mi>
-    </power>
+         <mi>p+1</mi>
+    </msup>
     <mi>)</mi>
 </math>
