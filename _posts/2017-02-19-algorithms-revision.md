@@ -38,7 +38,6 @@ because mathematical induction. Important to remember, as this means that the co
     <munderover>
       <mo>&sum;</mo>
       <mn>i</mn>
-      <apply>
       <power>
           <mi>i</mi>
           <mi>p</mi>
@@ -48,7 +47,7 @@ because mathematical induction. Important to remember, as this means that the co
     <mi>Θ(</mi> 
     <power>
          <mi>n</mi>
-         <mi>p+1</mi>
+         <mi>p</mi>
     </power>
     <mi>)</mi>
 </math>
