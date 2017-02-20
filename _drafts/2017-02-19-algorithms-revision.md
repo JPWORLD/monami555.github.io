@@ -6,7 +6,6 @@ author: Monik
 tags:
 - Algorithms
 commentIssueId: 34
-draft: true
 ---
 <div class="bg-info panel-body" markdown="1">
 Revising the most important things about data structures and algorithms.
