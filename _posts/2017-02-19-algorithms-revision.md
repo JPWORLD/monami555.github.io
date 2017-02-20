@@ -6,16 +6,17 @@ author: Monik
 tags:
 - Algorithms
 commentIssueId: 34
+type: draft
 ---
 <div class="bg-info panel-body" markdown="1">
-[under construction]<br/>
 Revising the most important things about data structures and algorithms.
 </div>
 
-# Table of Contents
-  * [Complexity analysis](#complexity)
+<h3>Table of contents</h3>
+- TOC
+{:toc max_level=2}
 
-## Complexity analysis <a id="complexity"></a>
+## Complexity analysis
 
 ### Maths
 
