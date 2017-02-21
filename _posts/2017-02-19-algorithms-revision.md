@@ -157,10 +157,10 @@ The complexities from worst to best:
 
 - [Selection sort](https://en.wikipedia.org/wiki/Selection_sort)
 
-![Selection sort, source: wikipedia]("http://en.wikipedia.org/wiki/File:Selection-Sort-Animation.gif")
+![Selection sort, source: wikipedia]("https://upload.wikimedia.org/wikipedia/commons/9/94/Selection-Sort-Animation.gif")
 
 - [Insertion sort](https://en.wikipedia.org/wiki/Insertion_sort)
 
-![Insertion sort, source: wikipedia]("http://en.wikipedia.org/wiki/File:Insertion-sort-example-300px.gif")
+![Insertion sort, source: wikipedia]("https://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif")
 
 
