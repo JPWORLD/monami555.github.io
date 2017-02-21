@@ -153,4 +153,14 @@ The complexities from worst to best:
 1. `lg(n)` - e.g. binary search
 1. `1` - single operations
 
+## Sorting
+
+- [Selection sort](https://en.wikipedia.org/wiki/Selection_sort)
+
+![Selection sort, source: wikipedia]("https://en.wikipedia.org/wiki/File:Selection-Sort-Animation.gif")
+
+- [Insertion sort](https://en.wikipedia.org/wiki/Insertion_sort)
+
+![Insertion sort, source: wikipedia]("https://en.wikipedia.org/wiki/File:Insertion-sort-example-300px.gif")
+
 
