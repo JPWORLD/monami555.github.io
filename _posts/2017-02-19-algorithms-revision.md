@@ -123,3 +123,44 @@ RAM stands here for _Random Access Machine_, and it is a computation model that 
 - memory access - is one step
 - loops and subroutines - is as many steps as many of the above they contain in all iterations
 
+### Complexity
+
+We have two types of it:
+- time complexity
+- space complexity
+
+Complexity is a (simplified) function of problem size (`n`) into time or space. We use the following notations:
+
+| Name   | Symbol    | Meaning                              |
+|--------|-----------|--------------------------------------|
+| Big Oh | `O(g(n))` | Worst case (upper bound)             |
+| Theta  | `Θ(g(n))` | Average case                         |
+| Omega  | `Ω(g(n))` | Best case (lower bound)              |
+
+Examples:
+- 3n<sup>2</sup>-100n+6 = O(n<sup>2</sup>) = O(n<sup>3</sup>)
+- 3n<sup>2</sup>-100n+6 = Ω(n<sup>2</sup>) = Ω(n)
+- 3n<sup>2</sup>-100n+6 = Θ(n<sup>2</sup>), because both Ω and O apply
+
+We are usually interested in the pessimistic worst case, which is the "Big Oh notation".
+
+The complexities from worst to best:
+1. `n!`, which is all permutations of set of n elements
+1. `2`<sup>`n`</sup>, e.g. enumerating all subsets of a set
+1. `n`<sup>`3`</sup>, e.g. some dynamic programming algorithms
+1. `n`<sup>`2`</sup>, e.g. insertion sort, selection sort
+1. `n*lg(n)` - called also superlinear, e.g. quick sort, merge sort
+1. `lg(n)` - e.g. binary search
+1. `1` - single operations
+
+## Sorting
+
+- [Selection sort](https://en.wikipedia.org/wiki/Selection_sort)
+
+![Selection sort, source: wikipedia]("http://en.wikipedia.org/wiki/File:Selection-Sort-Animation.gif")
+
+- [Insertion sort](https://en.wikipedia.org/wiki/Insertion_sort)
+
+![Insertion sort, source: wikipedia]("http://en.wikipedia.org/wiki/File:Insertion-sort-example-300px.gif")
+
+
