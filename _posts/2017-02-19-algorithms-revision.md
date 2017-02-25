@@ -249,7 +249,7 @@ Insertion:
 
 Deletion:
 
-- tricky only for a node that has 2 children; replace with the most left of its subtree
+- tricky only for a node that has 2 children; replace with the one which is the most on th left out of all its left subtrees
 
 Note that insertions/deletions can create unbalanced trees which are no longer so optimal - that's why data randomness is often desired. An example of always balanced trees are the red-black trees.
 
