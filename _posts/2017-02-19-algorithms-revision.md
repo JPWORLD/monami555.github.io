@@ -13,7 +13,7 @@ Revising the most important things about data structures and algorithms.
 
 <h3>Table of contents</h3>
 - TOC
-{:toc max_level=2}
+{:toc max_level=1}
 
 ## Complexity analysis
 
@@ -141,20 +141,20 @@ The last one can be used for computing a<sup>n</sup> fast. We just make a recurs
     <mi>b</mi>
     <mo>=</mo>
     <frac>
-    <mrow>
-        <msub>
-            <mi>log</mi>
-            <mi>c</mi> 
-        </msub>
-        <mi>b</mi>
-    </mrow>
-    <mrow>
-        <msub>
-            <mi>log</mi>
-            <mi>c</mi> 
-        </msub>
-        <mi>a</mi>
-    </mrow>
+        <mrow>
+            <msub>
+                <mi>log</mi>
+                <mi>c</mi> 
+            </msub>
+            <mi>b</mi>
+        </mrow>
+        <mrow>
+            <msub>
+                <mi>log</mi>
+                <mi>c</mi> 
+            </msub>
+            <mi>a</mi>
+        </mrow>
     </frac>
 </math>
 
@@ -174,7 +174,7 @@ Harmonic summation is another important formula:
     <mi>ln(n)</mi>
 </math>
 
-### RAM
+### Random Access Machine
 
 RAM stands here for _Random Access Machine_, and it is a computation model that we use to talk about algorithm time complexity:
 
@@ -252,6 +252,27 @@ Deletion:
 - tricky only for a node that has 2 children; replace with the one which is the most on th left out of all its left subtrees
 
 Note that insertions/deletions can create unbalanced trees which are no longer so optimal - that's why data randomness is often desired. An example of always balanced trees are the red-black trees.
+
+### Priority queue
+
+It works on elements that have priorities assigned. Priority queue has the two operations available:
+
+- add element
+- remove and return element with highest priority
+
+It is most often implemented using *heap*, but can also be implemented using simple array, or binary tree.
+
+### Hash tables
+
+Each element has a function applied that maps it to _array index_. Looking up an index in an array is fast. Of course two elements can map to the same index, that's why:
+
+- the mapping function has to be chosen carefully, so that it maps the values uniformly
+- for the duplicates we can use a linked list - so each cell in hash table is actually a list
+- another option for duplicates is to put the duplicate in nearest empty space - will be fast enough to find it
+
+The example function for strings is: sum of powers of lengths of the alphabet times the code of the character (in other words the strings are "digits" in a number system of base=size of the alphabet), modulo (arbitrary) m.
+
+Hashing can be used for string matching - e.g. Rabin Karp algorithm that hashes each next segment using the information of the has of the previous one, and running in up to Θ(n + m), instead of the naive Θ(nm).
 
 ## Sorting & Search
 
