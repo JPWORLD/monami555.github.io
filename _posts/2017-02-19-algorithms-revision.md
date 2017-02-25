@@ -262,6 +262,19 @@ It works on elements that have priorities assigned. Priority queue has the two o
 
 It is most often implemented using *heap*, but can also be implemented using simple array, or binary tree.
 
+### Heaps
+
+A heap is a tree but arranged differently than the binary tree. It is normally stored in an array.
+
+_heap property_ - if A is parent of B it is ordered with respect to B with the same ordering across the heap
+
+In the representing array the children of a node at position `n` are at positions `2n` and `2n + 1`.
+
+Most important operations:
+
+- adding element: add at the end and move up until heap property is restored
+- removing top element: remove the top, move the last one to the beginning and move it down until heap property is restored
+
 ### Hash tables
 
 Each element has a function applied that maps it to _array index_. Looking up an index in an array is fast. Of course two elements can map to the same index, that's why:
