@@ -231,25 +231,17 @@ _Linked data structures_ means the ones that involve pointers: lists, trees, as 
 
 ### Binary Tree
 
-For every element x the following holds: all elements of right subtree of x are >x and all elements of the left subtree are <x. 
+For every element `x` the following holds: all elements of right subtree of `x` are `>x` and all elements of the left subtree are `<x`. 
 
-Search:
+Operations:
 
-- is easy - just go left or right.
-
-Traversal:
-
-- _in-order_ - left subtree, me, right subtree
-- _pre-order_ - me, left subtree, right subtree
-- _post-order_ - left subtree, right subtree, me
-
-Insertion:
-
-- perform the search until you find NULL and put it there
-
-Deletion:
-
-- tricky only for a node that has 2 children; replace with the one which is the most on th left out of all its left subtrees
+- **search** - is easy: just go left or right
+- **traversal**:
+  - _in-order_ - left subtree, me, right subtree
+  - _pre-order_ - me, left subtree, right subtree
+  - _post-order_ - left subtree, right subtree, me
+- **insertion** - perform the search until you find NULL and put it there
+- **deletion** - tricky only for a node that has 2 children; replace with the one which is the most on th left out of all its left subtrees
 
 Note that insertions/deletions can create unbalanced trees which are no longer so optimal - that's why data randomness is often desired. An example of always balanced trees are the red-black trees.
 
@@ -257,8 +249,8 @@ Note that insertions/deletions can create unbalanced trees which are no longer s
 
 It works on elements that have priorities assigned. Priority queue has the two operations available:
 
-- add element
-- remove and return element with highest priority
+- **add** element
+- **remove** and return element with highest priority
 
 It is most often implemented using *heap*, but can also be implemented using simple array, or binary tree.
 
@@ -272,8 +264,10 @@ In the representing array the children of a node at position `n` are at position
 
 Most important operations:
 
-- adding element: add at the end and move up until heap property is restored
-- removing top element: remove the top, move the last one to the beginning and move it down until heap property is restored
+- **adding** element: add at the end and move up until heap property is restored
+- **removing** top element: remove the top, move the last one to the beginning and move it down until heap property is restored
+
+Heap sort is actually a form of selection sort but with a better data structure.
 
 ### Hash tables
 
