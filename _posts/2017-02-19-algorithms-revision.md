@@ -265,9 +265,11 @@ In the representing array the children of a node at position `n` are at position
 Most important operations:
 
 - **adding** element: add at the end and move up until heap property is restored
-- **removing** top element: remove the top, move the last one to the beginning and move it down until heap property is restored
+- **removing** top element: remove the top, move the last one to the beginning and move it down until heap property is restored (always pick the bigger child)
 
-Heap sort is actually a form of selection sort but with a better data structure.
+_Heap sort_ (O(`n lon(n)`)) is actually a form of selection sort but with a better data structure.
+
+Searching in a heap is very ineffective.
 
 ### Hash tables
 
