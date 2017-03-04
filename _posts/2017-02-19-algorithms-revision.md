@@ -224,14 +224,14 @@ The complexities from worst to best:
 
 The problems to be solved by algorithms have been divided to a number of problem classes:
 
-1. P - problems that can be solved in polynomial time (or better)
-1. NP - binary problems to which solution can be determined in polynomial time
-1. NP hard - problems to which any NP problem can be reduced in polynomial time (not necessarily included in NP class)
-1. NP complete - problems that are both NP and NP hard
+1. **P** - problems that can be solved in polynomial time (or better)
+1. **NP** - binary problems to which solution can be determined in polynomial time
+1. **NP hard** - problems to which any NP problem can be reduced in polynomial time (not necessarily included in NP class)
+1. **NP complete** - problems that are both NP and NP hard
 
 Some conclusions:
 
-[diagram]:https://i.stack.imgur.com/CFDuq.png
+<img src="https://i.stack.imgur.com/CFDuq.png"/>
 
 ## Data Structures
 
