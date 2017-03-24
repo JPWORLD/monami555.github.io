@@ -11,11 +11,11 @@ commentIssueId: 37
 Summary of different sources.
 </div>
 
-<img src="http://www.snipe.net/wp-content/uploads/2013/07/maxresdefault.jpg" height="170" width="300"/>
-
 <h3>Table of contents</h3>
 - TOC
 {:toc max_level=1}
+
+<img src="http://www.snipe.net/wp-content/uploads/2013/07/maxresdefault.jpg" height="170" width="300"/>
 
 ## How Does the Internet Work?
 
