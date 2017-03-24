@@ -15,11 +15,11 @@ Summary of different sources.
 - TOC
 {:toc max_level=1}
 
-<img src="http://www.snipe.net/wp-content/uploads/2013/07/maxresdefault.jpg" height="170" width="300"/>
-
 ## How Does the Internet Work?
 
 [source](http://www.theshulers.com/whitepapers/internet_whitepaper/)
+
+<img src="http://www.snipe.net/wp-content/uploads/2013/07/maxresdefault.jpg" height="170" width="300"/>
 
 ### IP Address
 
