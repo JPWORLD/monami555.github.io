@@ -15,13 +15,13 @@ Summary of different sources.
 - TOC
 {:toc max_level=1}
 
-# How Does the Internet Work?
+## How Does the Internet Work?
 
 [source](http://www.theshulers.com/whitepapers/internet_whitepaper/)
 
 <img src="http://www.snipe.net/wp-content/uploads/2013/07/maxresdefault.jpg" height="170" width="300"/>
 
-## IP Address
+### IP Address
 
 Internet Address (IP Address, Internet Protocol Address) is **unique** to each computer. It can be assigned as:
 
@@ -29,7 +29,7 @@ Internet Address (IP Address, Internet Protocol Address) is **unique** to each c
 - permament address from LAN (Local Area Network)
 - temporary address from DHCP (Dynamic Host Configuration Protocol) server, also in LAN
 
-## Protocol stack
+### Protocol stack
 
 The messages are send from computer to computer using TCP/IP protocol stack. There are following layers:
 
@@ -40,23 +40,23 @@ The messages are send from computer to computer using TCP/IP protocol stack. The
 
 The data is split into packets and packets are directed using ISP routers.
 
-## Internet infrastructure
+### Internet infrastructure
 
 Internet backbone is made up of many IXs (Internet Exchange Points), which are NSP (Network Service Provider) and private MAE (Metropolitan Area Exchanges) networks, connected via NAPs (Network Access Points). There are 3 NAPs per NSP.
 
-### Routing hierarchy
+#### Routing hierarchy
 
 Routers are packet switches. Each router has a **routing table**, which contains addresses of it's sub-networks. When a packet arrives (with an IP assigned) it either finds a network that contains the target computer, or passes it further to the backbone's router.
 
-### DNS
+#### DNS
 
 DNS (Domain Name Service) is a distributed database that keeps the computer name and its IP address. DNS servers are computers on the network that hold part of this database. It's a tree-like structure. When an Internet connection is setup 2 DNS addresses have to be extablished.
 
-## Application Protocols
+### Application Protocols
 
 Are specified by RFC (Request For Comments) documents.
 
-### HTTP
+#### HTTP
 
 Is protocols that Web Browsers and Web Servers use (client - server). It is connectionless.
 
@@ -64,20 +64,20 @@ _(I skip the part of how the Web page is requested, sent and rendeded in the bro
 
 `HTTP/2` was published in May 2015.
 
-### SMTP
+#### SMTP
 
 SMTP (Simple Mail Transfer Protocol) is used by mail client. It is connection oriented protocol - the client maintains the connection.
 
-## TCP/IP Protocol
+### TCP/IP Protocol
 
 The IP (Internet Protocol) sends packets from IP to IP. Is not reliable and connectionless. Packets do not have to arrive in order. TCP assures the order and adds its own headers.
 
-# Cookies and sessions
+## Cookies and sessions
 
 TODO
 
 
-# String encoding
+## String encoding
 
 **ASCII** defines `128` characters, which map to the numbers `0`–`127`. ASCII is a subset of **Unicode**. Unicode defines up to `2^21` characters (some numbers are unassigned, some are reserved).
 
