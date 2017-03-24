@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Algorithms - various concepts
+title: Various algorithm related
 date: '2017-03-18'
 author: Monik
 tags:
@@ -8,7 +8,7 @@ tags:
 commentIssueId: 38
 ---
 <div class="bg-info panel-body" markdown="1">
-Revising various concepts useful for algorithms and Java.
+Revising various concepts that can be useful for algorithm design.
 </div>
 
 <h3>Table of contents</h3>

@@ -9,7 +9,7 @@ tags:
 commentIssueId: 36
 ---
 <div class="bg-info panel-body" markdown="1">
-Revising the most important things about data structures.
+The most important data structures.
 </div>
 
 <h3>Table of contents</h3>

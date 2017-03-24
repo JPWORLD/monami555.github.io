@@ -13,12 +13,13 @@ Summary of different sources.
 
 <img src="http://www.snipe.net/wp-content/uploads/2013/07/maxresdefault.jpg" height="170" width="300"/>
 
-
 <h3>Table of contents</h3>
 - TOC
 {:toc max_level=1}
 
-## [How Does the Internet Work?](http://www.theshulers.com/whitepapers/internet_whitepaper/)
+## How Does the Internet Work?
+
+[source](http://www.theshulers.com/whitepapers/internet_whitepaper/)
 
 ### IP Address
 
