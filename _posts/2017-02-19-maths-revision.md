@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Maths in algorithms
-date: '2017-02-20'
+date: '2017-02-19'
 author: Monik
 tags:
 - Maths

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Data structures
-date: '2017-02-19'
+date: '2017-02-20'
 author: Monik
 tags:
 - Programming
