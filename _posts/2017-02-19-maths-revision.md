@@ -209,17 +209,17 @@ Answer: `p*p*(1-p)`.
 
 ### Conditional probability
 
-- P(A and B) = P(B given A)*P(A)
-- P(A or B) = P(A) + P(B) - P(A and B)
+- `P(A and B) = P(B given A)*P(A)`
+- `P(A or B) = P(A) + P(B) - P(A and B)`
 
 But:
 
 For A and B independent (A happening tells me nothing about B happening):
 
-- P(A and B) = P(A)*P(B)
+- `P(A and B) = P(A) * P(B)`
 
 For A and B mutually exclusive (if A happens B cannot happen:
 
-- P(A or B) = P(A) + P(B)
+- `P(A or B) = P(A) + P(B)`
 
-* Only impossible events are both mutually exclusive and independent.
+*Only impossible events are both mutually exclusive and independent.
