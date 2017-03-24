@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Algorithms - revision
+title: Data structures
 date: '2017-02-19'
 author: Monik
 tags:

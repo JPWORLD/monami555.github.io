@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Algorithms - revision
+title: Algorithms - various concepts
 date: '2017-03-18'
 author: Monik
 tags:
@@ -8,7 +8,7 @@ tags:
 commentIssueId: 38
 ---
 <div class="bg-info panel-body" markdown="1">
-Revising various Computer Science concepts.
+Revising various concepts useful for algorithms and Java.
 </div>
 
 <h3>Table of contents</h3>

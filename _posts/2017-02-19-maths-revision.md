@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Algorithms - revision
+title: Maths in algorithms
 date: '2017-02-20'
 author: Monik
 tags:

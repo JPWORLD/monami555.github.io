@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How Internet works - summary
+title: How Internet works - article summary
 date: '2017-03-04'
 author: Monik
 tags:
