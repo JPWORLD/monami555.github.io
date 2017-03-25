@@ -111,6 +111,7 @@ Graph can be stored in 2 ways:
 - **adjacency list** - array of linked lists, each list holds vertices connected with the vertex connected with the vertext corresponding to the array index - good for traversal
 
 In adjacency list the order of elements in the list does not matter.
+To store a weighted graph in an adjacency list we simply add the information about the node's weight in the vertex object, or keep a two element array instead.
 
 ### Breadth-first traversal
 

@@ -99,9 +99,62 @@ Time complexity: O(`n*logn`)
 2. Put a marker just before the first element
 3. Go from start to end, and whenever there is an element < pivot, put it just in front of the marker and move the marker one element towards the end
 4. The element just after the marker is now exactly where the pivot should be in the final sorted array. Swap the pivot and the element after the marker
-5. Sort the part before and after the pivot separately.
+5. Sort the part before and after the pivot/marker separately.
 
 Time complexity: average is Θ(`n*logn`), worst is O(`n`<sup>`2`</sup>) (in case the pivot happens to be always the smallest/the largest number). We can avoid the worst complexity by pre-randominzing the data set first, or simply choosing the pivot at random each time.
+
+### Bucket sort
+
+We put elements into `k` baskets of some ranges, and sort data in each basket (in another way), and then but the data back into the array.
+
+Distributing the elements into the baskets is `O(n)` time. There are some catches though when it comes to the complexity of assembling the array back:
+
+- if we can afford one basket per value we store only element counts in each basket instead of list of elements. If the data is uniformly distributed, then indeed the average complexity will be equal to `Θ(n+k)`. Why? Because first we iterate through every of `k` buckets and for every bucket we check on average `n/k` elements. That is `Θ(k*(n/k+c)) = Θ(n+k)`, where `c` is the cost of looking into that basket (the original explanation is [here](http://stackoverflow.com/questions/7311415/how-is-the-complexity-of-bucket-sort-is-onk-if-we-implement-buckets-using-lin)).
+
+- if we cannot afford one basket per value, then each basket we have to sort additionally, which is usually done by insertion sort that has complexity `O(n^2)`, hence the worst case time complexity is `O(n^2)`.
+
+### Radix sort
+
+Similar to bucket sort, but we do it like that:
+
+- have 10 buckets (queue style)
+- put numbers to baskets using least significant digit
+- put numbers back to the array
+- put numbers to baskets using second least significant digit
+- put numbers back to the array
+- ...
+
+By repeating it until we process all digits we actually end up with a sorted array.
+
+Instead we can start from most significant digit (use recursion), and that is how strings can be efficiently sorted.
+
+The time complexity is `O(w*n)`, where `w` is the max length of numbers/words.
+
+## Graph algorithms
+
+### Minimum spanning tree
+
+This is done in a weighted graph. In an unweighted graph each tree is a tree with minimum number of edges already (`n-1` edges).
+
+#### Prim's algorithm
+
+It goes like BFT and on each depth it chooses the minimum cost edge. Even though it is greedy it actually does always find the minimum spanning tree. The complexity is O(`n^2`) but if we use e.g. heap instead of linked list we can reduce it to O(`m*logn`) where `m` is the number of all vertices.
+
+#### Kruskal algorithm
+
+Start from cheapest to most expensive edges and before adding each of them check if we are still having a tree here (we shall not be adding to the same connected component). Time complexity: sorting edges is O(`m*logm`), building the tree O(`m*n`) and with a better data structure for testing connected component it is O(`m*logm`), which is better for sparse graphs.
+
+### Shortest path in weighted graph
+
+We look for a cheapest path between 2 vertices. In an unweighted graph we just do BFT starting from one of the edges.
+
+#### Djikstra's algorithm
+
+Similar to Prim's algorithm, but for each vertex we record tentative cost of travelling to it from the starting vertex. At the beginning the starting vertex has a cost of 0 and all other vertices have cost of infinity. When we find a lower cost for a vertex, we update it.
+
+We also move in a BFT fashion, but always pick the vertex with the cheapest tentative cost first. We finish when we have traversed all the graph.
+
+Usually uses heap to keep track of the minimum distance for each vertex.
 
 ## Strings
 
