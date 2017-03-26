@@ -129,7 +129,7 @@ Two layer architecture consists of presentation layer and a data storage layer. 
 
 Three layer architecture consists of presentation layer, a domain logic layer, and a data storage layer.
 
-Three tier architecture is client–server software architecture pattern where all the above 3 layers are part of different and independent modules
+Three tier architecture is client–server software architecture pattern where all the above 3 layers are part of different and independent modules. The presentation layer is the client, most often a web browser.
 
 ## String encoding
 
